@@ -1,18 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity" >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/macrosTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:height="75dp"
+                android:ems="30"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="Macro Nutrients Breakdown"
+                android:textSize="18sp" />
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:id="@+id/piechart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@id/macrosTitle">
+
+            </com.github.mikephil.charting.charts.PieChart>
+
+            <TextView
+                android:id="@+id/Recommended"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/piechart"
+                android:ems="30"
+                android:fontFamily="monospace"
+                android:text="Recommended Breakdown: Carbs 60%, Protein 40%, Fats 20%"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/SodiumBarChartTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/Recommended"
+                android:height="75dp"
+                android:ems="30"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="Sodium Bar Chart"
+                android:textSize="18sp" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/sodiumbarchart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@id/SodiumBarChartTitle"
+                android:layout_marginTop="5dp">
+
+            </com.github.mikephil.charting.charts.BarChart>
+
+            <TextView
+                android:id="@+id/DailyCalorieTrendTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sodiumbarchart"
+                android:height="75dp"
+                android:ems="30"
+                android:fontFamily="monospace"
+                android:gravity="center"
+                android:text="Daily Calorie Count"
+                android:textSize="18sp" />
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/calorieBarChart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_below="@id/DailyCalorieTrendTitle">
+
+            </com.github.mikephil.charting.charts.BarChart>
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
+
